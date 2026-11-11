@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>PulseGuard — Live Environment Intelligence</title>
+  <script type="module" crossorigin src="/assets/index-B0qDrTOx.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DxK6SMDm.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="PulseGuard home">
+        <span class="brand-mark">✦</span><span>Pulse<span class="accent">Guard</span></span>
+      </a>
+      <div class="live-indicator"><span class="pulse-dot"></span> LIVE DATA <span id="updatedAt">Connecting…</span></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">YOUR WORLD, IN REAL TIME</p>
+          <h1>Make the <span class="gradient-text">next move</span><br />with better data.</h1>
+          <p class="subtitle">A live environmental dashboard that turns weather and air-quality data into practical decisions.</p>
+        </div>
+        <div class="search-card">
+          <label for="cityInput">CHECK A LOCATION</label>
+          <div class="search-row">
+            <input id="cityInput" type="text" placeholder="Enter city (e.g. Chennai)" value="Chennai" />
+            <button id="searchBtn">Explore ↗</button>
+          </div>
+          <button class="location-btn" id="locationBtn">◎ Use my current location</button>
+          <p class="tiny-note" id="statusMessage">Fetching the latest available data…</p>
+        </div>
+      </section>
+
+      <section class="location-heading">
+        <div>
+          <p class="eyebrow">CURRENT SNAPSHOT</p>
+          <h2 id="placeName">Chennai, India</h2>
+          <p id="localDate" class="muted">Loading local conditions…</p>
+        </div>
+        <div class="decision-pill" id="decisionPill"><span>●</span> Calculating conditions</div>
+      </section>
+
+      <section class="metric-grid">
+        <article class="metric-card temperature">
+          <div class="card-top"><span>Temperature</span><span class="metric-icon">☀</span></div>
+          <div class="metric-value"><span id="temperature">--</span><small>°C</small></div>
+          <p id="feelsLike" class="muted">Feels like --°</p>
+          <div class="mini-track"><span id="tempBar"></span></div>
+          <p class="card-foot">Current outdoor heat</p>
+        </article>
+        <article class="metric-card air">
+          <div class="card-top"><span>Air quality</span><span class="metric-icon">◌</span></div>
+          <div class="metric-value"><span id="aqi">--</span><small> AQI</small></div>
+          <p id="aqiLabel" class="muted">Checking air quality</p>
+          <div class="mini-track"><span id="aqiBar"></span></div>
+          <p class="card-foot">European AQI scale</p>
+        </article>
+        <article class="metric-card wind">
+          <div class="card-top"><span>Wind speed</span><span class="metric-icon">〰</span></div>
+          <div class="metric-value"><span id="wind">--</span><small> km/h</small></div>
+          <p id="windLabel" class="muted">Wind conditions</p>
+          <div class="mini-track"><span id="windBar"></span></div>
+          <p class="card-foot">Near-surface wind</p>
+        </article>
+        <article class="metric-card uv">
+          <div class="card-top"><span>UV index</span><span class="metric-icon">◉</span></div>
+          <div class="metric-value"><span id="uv">--</span><small> / 11+</small></div>
+          <p id="uvLabel" class="muted">Checking UV exposure</p>
+          <div class="mini-track"><span id="uvBar"></span></div>
+          <p class="card-foot">Sun exposure indicator</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel forecast-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">NEXT 12 HOURS</p><h3>Conditions timeline</h3></div>
+            <span class="panel-icon">↗</span>
+          </div>
+          <div id="hourlyForecast" class="hourly-list">
+            <p class="muted">Loading forecast…</p>
+          </div>
+        </article>
+        <article class="panel recommendation-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">SMART RECOMMENDATIONS</p><h3>Your action plan</h3></div>
+            <span class="panel-icon">✦</span>
+          </div>
+          <div id="recommendations" class="recommendations">
+            <div class="recommendation"><span class="rec-icon">◌</span><div><strong>Preparing your report</strong><p>Live conditions are being analysed.</p></div></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="bottom-row">
+        <div class="source-note"><span class="source-dot"></span><div><strong>Data-powered, not guesswork.</strong><p>Weather and air-quality readings are retrieved from Open-Meteo. Values update when you refresh or search a location.</p></div></div>
+        <button id="refreshBtn" class="refresh-btn">↻ Refresh live data</button>
+      </section>
+    </main>
+    <footer><span>PulseGuard © 2026</span><span>Built with HTML · CSS · JavaScript · Public APIs</span></footer>
+  </div>
+</body>
+</html>
